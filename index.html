@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Income & Expense Tracker</h1>
+        <form id="form">
+            <div class="form-group">
+                <input type="text" id="text" placeholder="Transaction Description" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="amount" placeholder="Amount" required>
+            </div>
+            <div class="form-group transaction-type">
+                <label>
+                    <input type="radio" name="transactionType" value="income" checked> Income
+                </label>
+                <label>
+                    <input type="radio" name="transactionType" value="expense"> Expense
+                </label>
+            </div>
+            <button type="submit" class="btn">Add Transaction</button>
+        </form>
+
+        <h2>Your Balance: <span id="balance">₹0.00</span></h2>
+        <div class="i_flex">
+        <h3>Income: <span id="income">₹0.00</span></h3>
+        <h3>Expense: <span id="expense">₹0.00</span></h3>
+        </div>
+
+        <h2>Transaction List</h2>
+        <ul id="transaction-list"></ul>
+
+        <div class="filter-buttons">
+            <button class="btn" onclick="filterTransactions('all')">Show All</button>
+            <button class="btn" onclick="filterTransactions('income')">Show Income</button>
+            <button class="btn" onclick="filterTransactions('expense')">Show Expense</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
